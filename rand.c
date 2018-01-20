@@ -31,6 +31,9 @@
 #else
 #include <assert.h>
 #endif
+#ifdef _ESP32
+#include "esp_system.h"
+#endif
 
 uint32_t random32(void)
 {
@@ -41,6 +44,9 @@ uint32_t random32(void)
 		initialized = 1;
 	}
 	return ((rand() % 0xFF) | ((rand() % 0xFF) << 8) | ((rand() % 0xFF) << 16) | ((rand() % 0xFF) << 24));
+#endif
+#ifdef _ESP32
+	return (uint32_t)esp_random();
 #else
 	static FILE *frand = NULL;
 	if (!frand) {

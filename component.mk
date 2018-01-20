@@ -7,6 +7,7 @@
 # please read the ESP-IDF documents if you need to do this.
 COMPONENT_ADD_INCLUDEDIRS := . 
 COMPONENT_PRIV_INCLUDEDIRS := aes
+#CFLAGS:=-D_ESP32=1
 ## Uncomment the following line to enable exception handling 
 #CXXFLAGS+=-fexceptions
 #CXXFLAGS+= -std=c++11
