@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef __ADDRESS_H__
-#define __ADDRESS_H__
+#ifndef __CRYPTOADDRESS_H__
+#define __CRYPTOADDRESS_H__
 
 #include <stdint.h>
 #include <stdbool.h>

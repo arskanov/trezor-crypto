@@ -26,8 +26,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <cryptoaddress.h>
 
-#include "address.h"
 #include "bignum.h"
 #include "rand.h"
 #include "sha2.h"

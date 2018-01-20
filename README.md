@@ -1,8 +1,6 @@
 # trezor-crypto
 
-[![Build Status](https://travis-ci.org/trezor/trezor-crypto.svg?branch=master)](https://travis-ci.org/trezor/trezor-crypto) [![gitter](https://badges.gitter.im/trezor/community.svg)](https://gitter.im/trezor/community)
-
-Heavily optimized cryptography algorithms for embedded devices.
+Heavily optimized cryptography algorithms for embedded devices, modifiedd to function as an ESP32 component
 
 These include:
 - AES/Rijndael encryption/decryption
@@ -24,13 +22,12 @@ These include:
 - SHA3/Keccak
 - BLAKE2s/BLAKE2b
 - Chacha20-Poly1305
-- unit tests (using Check - check.sf.net; in test_check.c)
-- tests against OpenSSL (in test_openssl.c)
 
 Distibuted under MIT License.
 
 ## Some parts of the library come from external sources:
 
+- Most of the library: https://github.com/trezor/trezor-crypto
 - AES: https://github.com/BrianGladman/aes
 - Base58: https://github.com/luke-jr/libbase58
 - BLAKE2s/BLAKE2b: https://github.com/BLAKE2/BLAKE2

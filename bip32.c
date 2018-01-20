@@ -22,11 +22,11 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#include <cryptoaddress.h>
 #include <string.h>
 #include <stdbool.h>
 
 #include "aes/aes.h"
-#include "address.h"
 #include "bignum.h"
 #include "hmac.h"
 #include "ecdsa.h"
@@ -38,10 +38,10 @@
 #include "curves.h"
 #include "secp256k1.h"
 #include "nist256p1.h"
-#include "ed25519-donna/ed25519.h"
-#include "ed25519-donna/ed25519-sha3.h"
+#include "ed25519.h"
+#include "ed25519-sha3.h"
 #if USE_KECCAK
-#include "ed25519-donna/ed25519-keccak.h"
+#include "ed25519-keccak.h"
 #endif
 #if USE_NEM
 #include "nem.h"

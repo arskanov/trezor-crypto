@@ -21,7 +21,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "address.h"
+#include <cryptoaddress.h>
 
 size_t address_prefix_bytes_len(uint32_t address_type)
 {
