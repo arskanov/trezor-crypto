@@ -29,6 +29,10 @@
 #include "ripemd160.h"
 #include "memzero.h"
 
+#ifdef ESP_PLATFORM
+#include "esp_log.h"
+#endif
+
 static const int8_t b58digits_map[] = {
 	-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
 	-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
@@ -207,15 +211,18 @@ int base58_encode_check(const uint8_t *data, int datalen, HasherType hasher_type
 int base58_decode_check(const char *str, HasherType hasher_type, uint8_t *data, int datalen)
 {
 	if (datalen > 128) {
+		ESP_LOGD("base58.c", "datalen > 128, exiting...");
 		return 0;
 	}
 	uint8_t d[datalen + 4];
 	size_t res = datalen + 4;
 	if (b58tobin(d, &res, str) != true) {
+		ESP_LOGD("base58.c", "b58tobin failed, exiting...");
 		return 0;
 	}
 	uint8_t *nd = d + datalen + 4 - res;
 	if (b58check(nd, res, hasher_type, str) < 0) {
+		ESP_LOGD("base58.c", "b58check failed, exiting...");
 		return 0;
 	}
 	memcpy(data, nd, res - 4);

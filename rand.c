@@ -31,7 +31,7 @@
 #else
 #include <assert.h>
 #endif
-#ifdef _ESP32
+#ifdef ESP_PLATFORM
 #include "esp_system.h"
 #endif
 
@@ -45,7 +45,8 @@ uint32_t random32(void)
 	}
 	return ((rand() % 0xFF) | ((rand() % 0xFF) << 8) | ((rand() % 0xFF) << 16) | ((rand() % 0xFF) << 24));
 #endif
-#ifdef _ESP32
+#ifdef ESP_PLATFORM
+#warning Using ESP32 Random generation!
 	return (uint32_t)esp_random();
 #else
 	static FILE *frand = NULL;
